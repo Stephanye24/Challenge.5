@@ -1,0 +1,20 @@
+const temperatures = [3, -2, "error", -6, -1, 9, 13, 17, 15, 14, 9, 5];
+const temperature2 = [2, 6, 9, -10, 0];
+
+let calcTemp = function (temps) {
+  let max = temps[0];
+  let min = temps[0];
+
+  for (let i = 0; i < temps.length; i++) {
+    const curTemp = temps[i];
+    if (typeof curTemp !== "number") continue;
+    if (curTemp > max) max = curTemp;
+    if (curTemp < min) min = curTemp;
+  }
+  console.log(max, min);
+  return max - min;
+};
+
+let conca = calcTemp(temperatures.concat(temperature2));
+
+console.log(conca);
